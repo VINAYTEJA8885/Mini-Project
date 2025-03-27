@@ -4,29 +4,10 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/your-username/vinay-html-project.git'
+                // Use your actual repository URL here
+                git 'https://github.com/VINAYTEJA8885/Mini-Project.git'
             }
         }
-
-        stage('Verify Files') {
-            steps {
-                sh 'ls -l'
-            }
-        }
-
-        stage('Archive Site') {
-            steps {
-                archiveArtifacts artifacts: '**/*.html', fingerprint: true
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'HTML project build (CI) complete!'
-        }
-        failure {
-            echo 'Something went wrong!'
-        }
+        // ... other stages ...
     }
 }
